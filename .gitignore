@@ -1,0 +1,60 @@
+# Node / package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime / caches / builds
+.tmp/
+tmp/
+temp/
+.cache/
+.eslintcache
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+.npmrc
+*.local
+
+# OS & editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+!.vscode/extensions.json
+
+# DB / storage / uploads
+data/
+storage/
+uploads/
+public/uploads/
+dump.rdb
+*.bak
+*.sqlite
+*.sqlite3
+*.db
+
+# Misc
+*.swp
+*.swo
+*.orig
+
+# (Optional) Docker overrides (uncomment if you keep local-only overrides)
+# docker-compose.override.yml
