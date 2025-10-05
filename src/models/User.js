@@ -1,3 +1,4 @@
+// src/models/User.js
 const { Schema, model } = require("mongoose");
 
 const SupportPersonSchema = new Schema(
@@ -12,7 +13,7 @@ const SupportPersonSchema = new Schema(
 
 const UserSchema = new Schema(
   {
-    // auth
+    // auth (optional if you later add email/password)
     email: { type: String, index: true, unique: true, sparse: true },
     passwordHash: { type: String },
 
@@ -20,8 +21,10 @@ const UserSchema = new Schema(
     deviceId: { type: String, index: true, unique: true, sparse: true },
 
     // profile
-    name: { type: String },
-    avatarKey: { type: String, default: "boy" },
+    name: { type: String, default: "Your profile" },
+    // ❗ Store null when "No image" is selected; frontend will show placeholder
+    avatarKey: { type: String, default: null },
+    // Supportive people live under user
     people: { type: [SupportPersonSchema], default: [] },
   },
   { timestamps: true }

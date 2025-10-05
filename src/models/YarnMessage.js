@@ -1,11 +1,18 @@
 // src/models/YarnMessage.js
-const { Schema, model } = require("mongoose");
-const YarnMessageSchema = new Schema(
+const mongoose = require("mongoose");
+
+const YarnMessageSchema = new mongoose.Schema(
   {
-    userId: { type: Schema.Types.ObjectId, ref: "User", index: true },
-    role: { type: String, enum: ["user", "bot", "system"], required: true },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: false,
+      index: true,
+    },
+    role: { type: String, enum: ["user", "assistant"], required: true },
     text: { type: String, required: true },
   },
   { timestamps: true }
 );
-module.exports = model("YarnMessage", YarnMessageSchema);
+
+module.exports = mongoose.model("YarnMessage", YarnMessageSchema);
